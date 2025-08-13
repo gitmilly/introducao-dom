@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DENTRAN</title>
+    <style>
+body{
+    font-family: Arial, serif;
+    background-color: rgb(91, 88, 94);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10 rgb(0, 0, 0);
+    text-align: center;
+    width: 300px;
+}
+input[type="number"]{
+    width: 80px;
+    padding: 5px;
+    margin: 10px 0;
+}
+input[type="button"]{
+    padding: 5px 15px;
+    background-color: #4d4d4d;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid rgb(206, 206, 206);
+    box-shadow: inset 4px 4px 10px #bcbcbc,
+                inset -4px -4px 10px #ffffff;
+                color: #c4c5c4;
+}
+    button:hover{
+        box-shadow: inset 2px 2px 10px #bcbcbc,
+                    inset -2px -2px 10px #ffffff,
+                    2px 2px 10px #bcbcbc
+                    -2px -2px 10px #ffffff;
+
+    }
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+    </style>
+</head>
+<body>
+   
+    <main>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id = "txtvel"> Km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res"> </div>
+    </main>
+    
+    
+    <script>
+        function calcular(){
+          var txtv = window.document.querySelector('input#txtvel')
+          var res = window.document.querySelector('div#res')
+           var vel = Number(txtv.value) 
+           res.innerHTML = `Sua velocidade atual é de <strong> ${vel}Km/h<strong>`
+            if(vel > 60){
+                res.innerHTML += '<p> Você está <strong> MULTADO </strong> por exessso de velocidade</p>' 
+            }
+            res.innerHTML += `Dirija sempre com cinto de segurança!`
+        
+        
+        }
+        
+
+   
+   
+   
+   
+   
+   
+   </script>
+    
+</body>
+</html>
