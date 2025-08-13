@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex09 Site</title>
+    <style>
+        input[type='button']{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+       <h1>Sua Nacionalidade!</h1>
+       <input type="string" name="txtpais" id="txtpais">
+       <input type="button" value="result" onclick="result()">
+       <div id="res">Resultado:</div>
+     </main>
+       
+       
+ <script>
+        
+        function result(){
+
+         var pais = window.document.getElementById('txtpais').value.trim().toUpperCase();
+         
+         var res = window.document.getElementById('res');
+       // console.log(`Vivendo em ${pais}`);
+
+
+    if(pais === 'BR' || pais === 'BRASIL' ){
+
+    res.innerHTML = 'Você é brasileiro(a)!';
+    
+    }else if (pais === ''){
+    
+    res.innerHTML = `Por favor insira um pais!`
+    }else{
+        res.innerHTML = `Você é estrangeiro de pais ${pais}`
+    }
+
+               }
+  </script>
+
+</body>
+</html>
